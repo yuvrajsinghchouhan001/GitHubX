@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: githubx-backend
+    runtime: node
+    rootDir: backend-main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
