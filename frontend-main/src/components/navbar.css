@@ -1,0 +1,119 @@
+.gh-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 12px 24px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.gh-navbar-left,
+.gh-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gh-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #f0f6fc;
+}
+
+.gh-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: opacity 0.2s;
+}
+
+.gh-brand:hover .gh-logo {
+  opacity: 0.85;
+}
+
+.gh-brand-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.gh-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.gh-nav-link {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.gh-nav-link:hover {
+  background-color: #21262d;
+  color: #f0f6fc;
+  text-decoration: none;
+}
+
+.gh-nav-link.active {
+  background-color: #21262d;
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.gh-btn-new {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #238636;
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: background-color 0.2s;
+}
+
+.gh-btn-new:hover {
+  background-color: #2ea043;
+}
+
+.plus-icon {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.gh-btn-logout {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.gh-btn-logout:hover {
+  background-color: #b62324;
+  border-color: #b62324;
+  color: #ffffff;
+}
+
+@media (max-width: 650px) {
+  .gh-nav-links {
+    display: none;
+  }
+}

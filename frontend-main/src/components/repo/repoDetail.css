@@ -1,0 +1,316 @@
+.repo-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+}
+
+.repo-loading,
+.repo-error-container {
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 30px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.repo-error-container h2 {
+  color: #f85149;
+  margin-bottom: 12px;
+}
+
+.repo-error-container p {
+  color: #8b949e;
+  margin-bottom: 20px;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.repo-header-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.repo-path {
+  font-size: 20px;
+  color: #8b949e;
+}
+
+.repo-owner-name {
+  color: #58a6ff;
+}
+
+.repo-title {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.repo-badge {
+  font-size: 12px;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.gh-btn-danger {
+  background-color: transparent;
+  border: 1px solid #da3633;
+  color: #f85149;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gh-btn-danger:hover {
+  background-color: #b62324;
+  color: #ffffff;
+}
+
+.repo-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 24px;
+}
+
+.repo-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #8b949e;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.repo-tab:hover {
+  color: #f0f6fc;
+}
+
+.repo-tab.active {
+  color: #f0f6fc;
+  border-bottom-color: #f78166;
+  font-weight: 600;
+}
+
+.tab-count {
+  background-color: rgba(110, 118, 129, 0.4);
+  color: #f0f6fc;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.repo-desc-box {
+  color: #8b949e;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.clone-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.clone-label {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.clone-cmd {
+  background-color: #0d1117;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #58a6ff;
+  font-size: 13px;
+  border: 1px solid #30363d;
+}
+
+.repo-files-card {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background-color: #161b22;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.files-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.files-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #21262d;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.file-row:last-child {
+  border-bottom: none;
+}
+
+.file-name {
+  color: #58a6ff;
+  cursor: pointer;
+}
+
+.file-name:hover {
+  text-decoration: underline;
+}
+
+.file-msg {
+  color: #8b949e;
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.readme-box {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background-color: #0d1117;
+  overflow: hidden;
+}
+
+.readme-header {
+  padding: 10px 16px;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.readme-body {
+  padding: 24px;
+  color: #c9d1d9;
+}
+
+.readme-body h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #f0f6fc;
+}
+
+/* Issues Tab Styles */
+.issues-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.issues-count-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.new-issue-form {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.new-issue-form h3 {
+  color: #f0f6fc;
+  font-size: 16px;
+}
+
+.issues-list {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background-color: #161b22;
+  overflow: hidden;
+}
+
+.issue-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-bottom: 1px solid #21262d;
+  gap: 12px;
+}
+
+.issue-item:last-child {
+  border-bottom: none;
+}
+
+.issue-icon-open {
+  color: #3fb950;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.issue-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.issue-title {
+  color: #f0f6fc;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.issue-desc {
+  color: #8b949e;
+  font-size: 13px;
+}
+
+.issue-meta {
+  color: #8b949e;
+  font-size: 12px;
+}
+
+.empty-issues {
+  padding: 40px 20px;
+  text-align: center;
+  color: #8b949e;
+}
+
+.empty-issues h3 {
+  color: #f0f6fc;
+  margin-bottom: 8px;
+}
