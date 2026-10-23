@@ -40,11 +40,17 @@ const Login = () => {
       navigate("/");
     } catch (err) {
       console.error(err);
-      setError(
-        err.response?.data?.message ||
-          err.response?.data?.error ||
-          "Invalid email or password."
-      );
+      if (err.message === "Network Error" || !err.response) {
+        setError(
+          "Cannot connect to the backend server. Make sure your backend server is running."
+        );
+      } else {
+        setError(
+          err.response?.data?.message ||
+            err.response?.data?.error ||
+            "Invalid email or password."
+        );
+      }
       setLoading(false);
     }
   };

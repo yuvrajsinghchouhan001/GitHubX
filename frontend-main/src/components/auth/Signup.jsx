@@ -42,11 +42,17 @@ const Signup = () => {
       navigate("/");
     } catch (err) {
       console.error(err);
-      setError(
-        err.response?.data?.message ||
-          err.response?.data?.error ||
-          "Signup failed. Username or email may already be in use."
-      );
+      if (err.message === "Network Error" || !err.response) {
+        setError(
+          "Cannot connect to the backend server. If you are using the live GitHub Pages link, the backend must be deployed online with HTTPS, or run locally at http://localhost:5173."
+        );
+      } else {
+        setError(
+          err.response?.data?.message ||
+            err.response?.data?.error ||
+            "Signup failed. Username or email may already be in use."
+        );
+      }
       setLoading(false);
     }
   };
