@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
 import { useAuth } from "../../authContext";
+import { API_BASE_URL } from "../../config";
 import "./repoDetail.css";
 
 const RepoDetail = () => {
@@ -29,7 +30,7 @@ const RepoDetail = () => {
   const fetchRepoData = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:3002/repo/${id}`);
+      const res = await axios.get(`${API_BASE_URL}/repo/${id}`);
       // res.data can be array of 1 or object
       const repoData = Array.isArray(res.data) ? res.data[0] : res.data;
       setRepo(repoData);
@@ -37,7 +38,7 @@ const RepoDetail = () => {
       if (repoData && repoData._id) {
         try {
           const issuesRes = await axios.get(
-            `http://localhost:3002/issue/all/${repoData._id}`
+            `${API_BASE_URL}/issue/all/${repoData._id}`
           );
           setIssues(Array.isArray(issuesRes.data) ? issuesRes.data : []);
         } catch (issueErr) {
@@ -58,7 +59,7 @@ const RepoDetail = () => {
 
     try {
       setIssueLoading(true);
-      const res = await axios.post(`http://localhost:3002/issue/create/${id}`, {
+      const res = await axios.post(`${API_BASE_URL}/issue/create/${id}`, {
         title: newIssueTitle.trim(),
         description: newIssueDesc.trim(),
         repository: id,
@@ -83,7 +84,7 @@ const RepoDetail = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:3002/repo/delete/${id}`);
+      await axios.delete(`${API_BASE_URL}/repo/delete/${id}`);
       navigate("/");
     } catch (err) {
       console.error(err);

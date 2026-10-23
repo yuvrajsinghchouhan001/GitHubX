@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
 import { useAuth } from "../../authContext";
+import { API_BASE_URL } from "../../config";
 import "./createRepo.css";
 
 const CreateRepo = () => {
@@ -32,7 +33,7 @@ const CreateRepo = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3002/repo/create", {
+      const res = await axios.post(`${API_BASE_URL}/repo/create`, {
         owner: userId,
         name: name.trim().toLowerCase().replace(/\s+/g, "-"),
         description: description.trim(),

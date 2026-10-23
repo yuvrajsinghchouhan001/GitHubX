@@ -5,6 +5,7 @@ import "./profile.css";
 import Navbar from "../Navbar";
 import HeatMapProfile from "./HeatMap";
 import { useAuth } from "../../authContext";
+import { API_BASE_URL } from "../../config";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Profile = () => {
         try {
           // Fetch user details
           const response = await axios.get(
-            `http://localhost:3002/userProfile/${userId}`
+            `${API_BASE_URL}/userProfile/${userId}`
           );
           if (response.data) {
             setUserDetails(response.data);
@@ -34,7 +35,7 @@ const Profile = () => {
         try {
           // Fetch user's repositories
           const repoRes = await axios.get(
-            `http://localhost:3002/repo/user/${userId}`
+            `${API_BASE_URL}/repo/user/${userId}`
           );
           if (repoRes.data && Array.isArray(repoRes.data.repositories)) {
             setUserRepos(repoRes.data.repositories);

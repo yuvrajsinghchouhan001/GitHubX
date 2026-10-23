@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./dashboard.css";
 import Navbar from "../Navbar";
+import { API_BASE_URL } from "../../config";
 
 const Dashboard = () => {
   const [repositories, setRepositories] = useState([]);
@@ -20,7 +21,7 @@ const Dashboard = () => {
       }
       try {
         const response = await fetch(
-          `http://localhost:3002/repo/user/${userId}`
+          `${API_BASE_URL}/repo/user/${userId}`
         );
         const data = await response.json();
         setRepositories(Array.isArray(data?.repositories) ? data.repositories : []);
@@ -31,7 +32,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3002/repo/all`);
+        const response = await fetch(`${API_BASE_URL}/repo/all`);
         const data = await response.json();
         setSuggestedRepositories(Array.isArray(data) ? data : []);
       } catch (err) {

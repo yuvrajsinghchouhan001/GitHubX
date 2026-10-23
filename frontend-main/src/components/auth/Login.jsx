@@ -4,6 +4,7 @@ import { useAuth } from "../../authContext";
 import "./auth.css";
 import logo from "../../assets/github-mark-white.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +26,7 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3002/login", {
+      const res = await axios.post(`${API_BASE_URL}/login`, {
         email: email.trim(),
         password: password,
       });

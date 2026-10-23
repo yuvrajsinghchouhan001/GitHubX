@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, useRoutes, Navigate } from "react-router-dom";
+import { useNavigate, useRoutes, Navigate, useLocation } from "react-router-dom";
 
 // Pages List
 import Dashboard from "./components/dashboard/Dashboard";
@@ -15,6 +15,7 @@ import { useAuth } from "./authContext";
 const ProjectRoutes = () => {
   const { currentUser, setCurrentUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const rawUserId = localStorage.getItem("userId");
@@ -26,7 +27,7 @@ const ProjectRoutes = () => {
     if (!userIdFromStorage) {
       localStorage.removeItem("userId");
       localStorage.removeItem("token");
-      if (!["/auth", "/signup"].includes(window.location.pathname)) {
+      if (!["/auth", "/signup"].includes(location.pathname)) {
         navigate("/auth");
       }
     } else {
@@ -34,13 +35,13 @@ const ProjectRoutes = () => {
         setCurrentUser(userIdFromStorage);
       }
       if (
-        window.location.pathname === "/auth" ||
-        window.location.pathname === "/signup"
+        location.pathname === "/auth" ||
+        location.pathname === "/signup"
       ) {
         navigate("/");
       }
     }
-  }, [currentUser, navigate, setCurrentUser]);
+  }, [currentUser, navigate, setCurrentUser, location.pathname]);
 
   let element = useRoutes([
     {
